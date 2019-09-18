@@ -1,4 +1,4 @@
-function arrayShift(arr, newThing) {
+function arraySplice(arr, newThing) {
   const newArr = [];
   const newIndex = Math.floor(arr.length / 2);
   
@@ -14,4 +14,16 @@ function arrayShift(arr, newThing) {
   return newArr;
 }
 
-module.exports = arrayShift;
+function arrayShift(arr, newThing) {
+  const newArr = [];
+  const newIndex = 0;
+  
+  for(let i = 0; i < arr.length; i++) {
+    const num = arr[i];
+    newArr[i + 1] = num;
+  }
+  newArr[newIndex] = newThing;
+  return newArr;
+}
+
+module.exports = {arrayShift, arraySplice};
