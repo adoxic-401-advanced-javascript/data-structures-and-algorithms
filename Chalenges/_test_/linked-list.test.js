@@ -85,4 +85,31 @@ describe('Does it make linked lists?', () => {
     expect(list.head.next.next.data).toEqual(third.data);
     expect(list.size).toBe(3);
   });
+  it('should return exception if k not positive and less than or same as list', () => {
+    const list = new LinkedList;
+    list.insert(1);
+    const listTooShort = list.kthFromEnd(1);
+    expect(listTooShort).toBe('exception');
+    list.append(2);
+    const sameAsList = list.kthFromEnd(2);
+    expect(sameAsList).toBe('exception');
+    const negativeK = list.kthFromEnd(-2);
+    expect(negativeK).toBe('exception');
+  });
+  it('should return target val', () => {
+    const list = new LinkedList;
+    list.insert('snap');
+    list.insert('crackle');
+    list.insert('pop');
+    const crackle = list.kthFromEnd(1);
+    expect(crackle).toBe('crackle');
+  });
+  it('can get middle of list', () => {
+    const list = new LinkedList;
+    list.insert('snap');
+    list.insert('crackle');
+    list.insert('pop');
+    const mid = list.findMid();
+    expect(mid).toBe('crackle');
+  });
 });

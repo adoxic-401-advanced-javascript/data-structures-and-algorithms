@@ -65,6 +65,26 @@ class LinkedList{
     this.head.next = node;
     this.size++;
   }
+  kthFromEnd(k) {
+    if(k < 0 || k >= this.size || this.size === 1) {
+      return 'exception';
+    }
+    k++;
+    for(let i = 0; i < this.size -k; i++) {
+      this.head = this.head.next;
+    }
+
+    return this.head.data;
+  }
+  findMid() {
+    let target = Math.ceil(this.size / 2);
+    
+    for(let i = 0; i < this.size -target; i++) {
+      this.head = this.head.next;
+    }
+
+    return this.head.data;
+  }
 }
 
 module.exports = {
