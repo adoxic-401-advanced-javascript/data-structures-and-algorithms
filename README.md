@@ -11,3 +11,9 @@ in folder arrayShift
 
 Third Challenge: binary array sort
 in folder arrayBinarySort
+
+fourth Challenge: first linked list 
+in folder linkedList
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/4)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/129556089)
