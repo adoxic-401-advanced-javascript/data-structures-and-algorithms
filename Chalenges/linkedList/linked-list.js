@@ -26,13 +26,44 @@ class LinkedList{
   }
   toString() {
     if(this.head == null) return '';
-    let values = this.head.data;
+    let data = this.head.data;
     let current = this.head.next;
     while(current !== null) {
-      values += `, ${current.data}`;
+      data += `, ${current.data}`;
       current = current.next;
     }
-    return values;
+    return data;
+  }
+  append(data) {
+    const newNode = new Node(data);
+    let currentNode = this.head;
+    while(currentNode.next) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = newNode;
+    this.size++;
+  }
+  insertBefore(target, data) {
+    if(this.head.data === target) this.head.insert(data);
+
+    while(this.head.next.data !== target) {
+      this.head = this.head.next;
+    }
+
+    const node = new Node(data);
+    node.next = this.head.next;
+    this.head.next = node;
+    this.size++;
+  }
+  insertAfter(target, data) {
+    while(this.head.data !== target) {
+      this.head = this.head.next;
+    }
+
+    const node = new Node(data);
+    node.next = this.head.next;
+    this.head.next = node;
+    this.size++;
   }
 }
 

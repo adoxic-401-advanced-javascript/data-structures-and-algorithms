@@ -53,4 +53,36 @@ describe('Does it make linked lists?', () => {
     list.insert('the brain');
     expect(list.head.data.toString()).toBe('the brain', 'pinky');
   });
+  it('add at end?', () => {
+    const list = new LinkedList;
+    list.insert('pinky');
+    list.append('the brain');
+    expect(list.head.data.toString()).toBe('pinky', 'the brain');
+  });
+  it('add before target', () => {
+    const list = new LinkedList;
+    list.insert('snap');
+    list.insert('pop');
+    list.insertBefore('snap', 'crackle');
+    const third = { data: 'snap', next: null };
+    const second = { data: 'crackle', next: third };
+    const first = { data: 'pop', next: second };
+    expect(list.head.data).toEqual(first.data);
+    expect(list.head.next.data).toEqual(second.data);
+    expect(list.head.next.next.data).toEqual(third.data);
+    expect(list.size).toBe(3);
+  });
+  it('add after target', () => {
+    const list = new LinkedList;
+    list.insert('snap');
+    list.insert('pop');
+    list.insertAfter('pop', 'crackle');
+    const third = { data: 'snap', next: null };
+    const second = { data: 'crackle', next: third };
+    const first = { data: 'pop', next: second };
+    expect(list.head.data).toEqual(first.data);
+    expect(list.head.next.data).toEqual(second.data);
+    expect(list.head.next.next.data).toEqual(third.data);
+    expect(list.size).toBe(3);
+  });
 });
