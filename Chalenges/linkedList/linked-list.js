@@ -85,6 +85,7 @@ class LinkedList{
 
     return this.head.data;
   }
+
 }
 
 module.exports = {

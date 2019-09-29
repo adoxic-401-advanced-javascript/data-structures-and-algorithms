@@ -1,4 +1,5 @@
 const { LinkedList } = require('../linkedList/linked-list');
+const merge = require('../linkedList/zipper-merge');
 
 describe('Does it make linked lists?', () => {
   it('can make empty', () => {
@@ -111,5 +112,32 @@ describe('Does it make linked lists?', () => {
     list.insert('pop');
     const mid = list.findMid();
     expect(mid).toBe('crackle');
+  });
+  it('zipper merge where lists same length', () => {
+    const list1 = new LinkedList;
+    list1.insert(1);
+    list1.append(3);
+    
+    const list2 = new LinkedList;
+    list2.insert(2);
+    list2.append(4);
+    
+    merge(list1, list2);
+    let actual = list1.toString();
+    expect(actual).toBe('1, 2, 3, 4');
+  });
+  it('zipper merge where lists diff length', () => {
+    const list1 = new LinkedList;
+    list1.insert(1);
+    list1.append(3);
+    list1.append(5);
+    
+    const list2 = new LinkedList;
+    list2.insert(2);
+    list2.append(4);
+    
+    merge(list1, list2);
+    let actual = list1.toString();
+    expect(actual).toBe('1, 2, 3, 4, 5');
   });
 });
