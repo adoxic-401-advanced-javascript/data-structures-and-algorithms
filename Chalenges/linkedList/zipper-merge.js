@@ -1,5 +1,3 @@
-const { Node } = require('../linkedList/linked-list');
-
 function merge(list1, list2) {
   let one = list1.head;
   let two = list2.head;

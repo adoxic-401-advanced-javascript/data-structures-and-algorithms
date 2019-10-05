@@ -24,7 +24,14 @@ in folder linkedList
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/5)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/129564432)
 
-Sixth ChallengeL linked list find from end (or middle)
+Sixth Challengelinked list find from end (or middle)
 ### Links and Resources
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/6)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/129566371)
+
+Seventh Challenge Stack and Queue
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/7)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/129566371)
+*[stack](./Challenges/stackAndQueue/stack.js)
+*[queue](./Challenges/stackAndQueue/queue.js)
