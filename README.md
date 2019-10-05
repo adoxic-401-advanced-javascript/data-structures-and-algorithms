@@ -35,3 +35,10 @@ Seventh Challenge Stack and Queue
 * [travis](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/8/checks?check_run_id=249229978)
 *[stack](./Challenges/stackAndQueue/stack.js)
 *[queue](./Challenges/stackAndQueue/queue.js)
+
+
+Eighth Challenge Queue with a Stack
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/9)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130554166)
+*[stack-with-queue](./Challenges/queueWithStack/queue-with-stacks.js)
