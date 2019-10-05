@@ -1,4 +1,4 @@
-const PseudoQueue = require('../queueWithStacks/queue-with-stacks')
+const PseudoQueue = require('../queueWithStacks/queue-with-stacks');
 
 describe('fake queue', () => {
   it('add stuff queue style', () => {
