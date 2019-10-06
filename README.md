@@ -42,3 +42,9 @@ Eighth Challenge Queue with a Stack
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/9)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130554166)
 *[stack-with-queue](./Challenges/queueWithStack/queue-with-stacks.js)
+
+Ninth Challenge FIFO Animals
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/10)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130554166)
+*[FIFO-animals](./Challenges/fifoAnimalShelter/fifo-animal-shelter.js)
