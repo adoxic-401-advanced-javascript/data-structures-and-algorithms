@@ -29,8 +29,6 @@ function bracketValidation(str) {
       bad++;
     }    
   }
-  console.log(good);
-  console.log(bad);
 
   if(bad > 0) {
     return false;
