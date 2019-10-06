@@ -48,3 +48,9 @@ Ninth Challenge FIFO Animals
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/10)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130554166)
 *[FIFO-animals](./Challenges/fifoAnimalShelter/fifo-animal-shelter.js)
+
+Tenth Challenge Brackets
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/11)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130564269)
+*[brackets](./Challenges/multiBracketValidation/bracket-validation.js)
