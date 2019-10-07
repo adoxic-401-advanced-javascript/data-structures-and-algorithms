@@ -17,7 +17,7 @@ class BinaryTree {
       this.root = newNode;
       return;
     }
-    const traverse = this.root;
+    let traverse = this.root;
     if(thing > traverse.value) {
       while(traverse.right !== null) {
         traverse = traverse.right;
@@ -35,7 +35,7 @@ class BinaryTree {
     }
   
   }
-  
+
 }
 
 module.exports = BinaryTree;
