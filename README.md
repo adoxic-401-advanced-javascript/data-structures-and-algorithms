@@ -64,5 +64,5 @@ Challenge 11 Binary tree
 Challenge 12 fizz buzz tree
 ### Links and Resources
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/13)
-* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130564269)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/131666899)
 * [brackets](./Challenges/fizzBuzz/fizz-buzz.js)
