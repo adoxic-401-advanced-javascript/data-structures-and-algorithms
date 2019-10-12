@@ -55,8 +55,14 @@ Tenth Challenge Brackets
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130564269)
 *[brackets](./Challenges/multiBracketValidation/bracket-validation.js)
 
-Eleventh Challenge Brackets
+Challenge 11 Binary tree
 ### Links and Resources
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/12)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130564269)
-*[brackets](./Challenges/multiBracketValidation/bracket-validation.js)
+* [brackets](./Challenges/binaryTree/binary-tree.js)
+
+Challenge 12 fizz buzz tree
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/13)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/130564269)
+* [brackets](./Challenges/fizzBuzz/fizz-buzz.js)
