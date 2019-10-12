@@ -17,7 +17,7 @@ describe('fizz buzz tree', () => {
     fbTree.add(15);
     fbTree.fizzBuzz();
     
-    expect(fbTree.root).toBe('buzz');
+    expect(fbTree.root.value).toBe('buzz');
     expect(fbTree.root.right.left.value).toBe(11);
     expect(fbTree.root.left.value).toBe('fizz');
     expect(fbTree.root.right.right.value).toBe('fizzbuzz');
