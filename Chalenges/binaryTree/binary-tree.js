@@ -12,30 +12,61 @@ class BinaryTree {
   }
 
   add(thing) {
-    let newNode = new Node(thing, null, null);
+    let newNode = new Node(thing, null, null); 
+  
     if(this.root === null) {
       this.root = newNode;
-      return;
+    } else {
+      addMotif(this.root, newNode);
     }
-    let traverse = this.root;
-    if(thing > traverse.value) {
-      while(traverse.right !== null) {
-        traverse = traverse.right;
-      }
-      traverse.right = newNode;
-    }
-    if(thing < traverse.value) {
-      while(traverse.left !== null) {
-        traverse = traverse.left;
-      }
-      traverse.left = newNode;
-    }
-    if(thing === this.root.value) {
-      return 'Cannot store values that are the same as the root';
-    }
-  
   }
-
+  preOrder() {
+    const preArr = [];
+    const start = this.root;
+    const collected = preOrderMotif(start, preArr);
+    return collected;
+  }
+  inOrder() {
+    const inArr = [];
+    const start = this.root;
+    const collected = inOrderMotif(start, inArr);
+    return collected;
+  }
+  postOrder() {
+    const postArr = [];
+    const start = this.root;
+    const collected = postOrderMotif(start, postArr);
+    return collected;
+  }
+}
+//I couldn't figure out recursion on my own so I referenced Dave Trost's code for this challenge
+//I refactored a bit to make things match what I already had written 
+function addMotif(current, node) {
+  if(node.value === current.value) return 'this value is already in the tree';
+  
+  //if the function returns true side will equal left if false will return right
+  const side = (node.value < current.value) ? 'left' : 'right';
+  current[side] ? addMotif(current[side], node) : current[side] = node;
+}
+//still Dave refs but I wrote the method and test myself
+function preOrderMotif(current, arr) {
+  if(current) arr.push(current.value);
+  if(current.left) arr = preOrderMotif(current.left, arr);
+  if(current.right) arr = preOrderMotif(current.right, arr);
+  return arr;
 }
 
+function inOrderMotif(current, arr) {
+  if(current.left) arr = inOrderMotif(current.left, arr);
+  arr.push(current.value);
+  if(current.right) arr = inOrderMotif(current.right, arr);
+  return arr;
+}
+//I got this one all by myself!!
+function postOrderMotif(current, arr) {
+  if(current) arr.push(current.value);
+  if(current.right) arr = preOrderMotif(current.right, arr);
+  if(current.left) arr = preOrderMotif(current.left, arr);
+  return arr;
+}
 module.exports = BinaryTree;
