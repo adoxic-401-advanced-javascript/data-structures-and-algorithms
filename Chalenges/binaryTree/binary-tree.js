@@ -38,6 +38,38 @@ class BinaryTree {
     const collected = postOrderMotif(start, postArr);
     return collected;
   }
+  //https://levelup.gitconnected.com/the-magicians-guide-to-algorithms-part-4-the-breadth-first-search-b800aec8ccf8
+  //Used this as a guide, however that example is search not a return all and it's a array not a linked list so I modified a lot.
+  breadthFirst() {
+    const queue = [];
+    let base = this.root;
+    queue.push(base);
+    const breadthArr = [];
+
+    while(queue.length !== 0) {
+      for(let i = 0; i < queue.length; i++) {
+        const current = queue.shift();
+        console.log(current);
+        console.log('base', base);
+
+        if(current.value !== null) {
+          breadthArr.push(current.value);
+          console.log(breadthArr);
+        }
+        if(current.left) {
+          queue.push(base.left);
+        }
+        if(current.right) {
+          queue.push(base.right);
+        }
+        if(!current.left && !current.right) {
+          return breadthArr;
+        }
+      }
+      return breadthArr;
+    }
+    return breadthArr;
+  }
 }
 //I couldn't figure out recursion on my own so I referenced Dave Trost's code for this challenge
 //I refactored a bit to make things match what I already had written 
@@ -69,4 +101,5 @@ function postOrderMotif(current, arr) {
   if(current.left) arr = preOrderMotif(current.left, arr);
   return arr;
 }
+
 module.exports = BinaryTree;

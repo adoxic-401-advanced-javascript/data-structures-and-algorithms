@@ -71,4 +71,20 @@ describe('make and traverse a binary tree', () => {
     
     expect(values).toEqual([6, 8, 4, 2, 1]);
   });
+  it('breadth first tree', () => {
+    const newTree = new TreeNode();
+    expect(newTree.root).toBe(null);
+    
+    newTree.add(6);
+    newTree.add(8);
+    newTree.add(4);
+    newTree.add(2);
+    newTree.add(5);
+    newTree.add(7);
+    newTree.add(9);
+  
+    const values = newTree.breadthFirst();
+    console.log(values);
+    expect(values).toEqual([6, 4, 8, 2, 5, 7, 9]);
+  });
 });
