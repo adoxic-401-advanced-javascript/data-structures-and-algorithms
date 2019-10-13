@@ -56,10 +56,10 @@ class BinaryTree {
           breadthArr.push(current.value);
           console.log(breadthArr);
         }
-        if(current.left) {
+        if(current.left !== null && current.value !== breadthArr[i]) {
           queue.push(base.left);
         }
-        if(current.right) {
+        if(current.right !== null && current.value !== breadthArr[i]) {
           queue.push(base.right);
         }
         if(!current.left && !current.right) {
