@@ -72,3 +72,9 @@ Challenge 13 breadth first tree
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/14)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/131719921)
 * [brackets](./Challenges/binaryTree/binary-tree.js)
+
+Challenge 14 find max value tree
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/15)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/131719921)
+* [brackets](./Challenges/binaryTree/binary-tree.js)

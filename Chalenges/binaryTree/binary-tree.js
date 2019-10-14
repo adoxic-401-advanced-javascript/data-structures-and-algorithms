@@ -65,6 +65,12 @@ class BinaryTree {
     }
     return breadthArr;
   }
+  findBig() {
+    const big = { num: 0 };
+    const start = this.root;
+    const collected = findBigMotif(start, big);
+    return collected.num;
+  }
 }
 //I couldn't figure out recursion on my own so I referenced Dave Trost's code for this challenge
 //I refactored a bit to make things match what I already had written 
@@ -95,6 +101,17 @@ function postOrderMotif(current, arr) {
   if(current.right) arr = preOrderMotif(current.right, arr);
   if(current.left) arr = preOrderMotif(current.left, arr);
   return arr;
+}
+
+function findBigMotif(current, big) {
+  if(current) {
+    if(current.value > big.num) {
+      big.num = current.value;
+    } 
+  } 
+  if(current.left) big = findBigMotif(current.left, big);
+  if(current.right) big = findBigMotif(current.right, big);
+  return big;
 }
 
 module.exports = BinaryTree;

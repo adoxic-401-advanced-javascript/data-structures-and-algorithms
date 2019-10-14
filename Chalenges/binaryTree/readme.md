@@ -19,3 +19,14 @@ It's way easier to just go down, because there are no pointers to the parent nod
 This contains a nested loop it's really really bad actually. However I don't know how to fix it hahahaha.
 
 [breadth](./breadth.jpg)
+
+# Find Largest Value 
+Find the largest value in the tree and return it.
+
+## Challenge
+Reused a depth first function but instead of an array I used an object to store the value and then returned it.
+
+## Approach & Efficiency
+Pretty good?  Reused as much code as possible.
+
+[max](./max.jpg)
