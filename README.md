@@ -66,3 +66,9 @@ Challenge 12 fizz buzz tree
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/13)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/131666899)
 * [brackets](./Challenges/fizzBuzz/fizz-buzz.js)
+
+Challenge 13 breadth first tree
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/14)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/131719921)
+* [brackets](./Challenges/binaryTree/binary-tree.js)
