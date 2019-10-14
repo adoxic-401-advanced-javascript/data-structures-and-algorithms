@@ -47,24 +47,19 @@ class BinaryTree {
     const breadthArr = [];
 
     while(queue.length !== 0) {
-      for(let i = 0; i < queue.length; i++) {
+      for(let i = 0; queue.length; i++) {
         const current = queue.shift();
-        console.log(current);
-        console.log('base', base);
 
         if(current.value !== null) {
           breadthArr.push(current.value);
-          console.log(breadthArr);
         }
-        if(current.left !== null && current.value !== breadthArr[i]) {
-          queue.push(base.left);
+        if(current.left) {
+          queue.push(current.left);
         }
-        if(current.right !== null && current.value !== breadthArr[i]) {
-          queue.push(base.right);
+        if(current.right) {
+          queue.push(current.right);
         }
-        if(!current.left && !current.right) {
-          return breadthArr;
-        }
+        
       }
       return breadthArr;
     }
