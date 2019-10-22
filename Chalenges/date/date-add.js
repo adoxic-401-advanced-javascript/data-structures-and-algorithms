@@ -14,7 +14,8 @@ const dateAdd = (today, diff) => {
   arr.forEach(string => {
     const split = string.split('.');
     const getIndex = modObj[split[split.length-1]];
-    const newTime = timesMotif(arrMultiply, getIndex, 1);
+    let newTime = timesMotif(arrMultiply, getIndex, 1);
+    newTime = newTime * split[0]; 
     badArray.push(newTime);
   });
   console.log(badArray);
