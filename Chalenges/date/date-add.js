@@ -14,26 +14,27 @@ const dateAdd = (today, diff) => {
   arr.forEach(string => {
     const split = string.split('.');
     const getIndex = modObj[split[split.length-1]];
-    const newTime = timesMotif(arrMultiply, getIndex, 0);
+    const newTime = timesMotif(arrMultiply, getIndex, 1);
     badArray.push(newTime);
   });
   console.log(badArray);
   let newTime = badArray.reduce((a,b) => a + b, 0);
 
-  let firstTime = today.valueOf();
-  const totalTime = newTime + firstTime;
+ 
+  const totalTime = newTime + today;
   const newTotalTime = new Date(totalTime);
 
-  console.log(newTime, newTotalTime);
+  console.log(newTime, today);
   return newTotalTime;
 };
 
 const timesMotif = (arr, index, acc) => {
   index -= 1;
   let num = arr[index];
-  acc += num;
-  if(index > 0) num = timesMotif(arr, index-1);
-  return acc * 1000;
+  let newNum = acc * num;
+  console.log(acc, arr[index]);
+  if(index > 0) newNum = timesMotif(arr, index, newNum);
+  return newNum * 10;
 };
 
 module.exports = dateAdd;
