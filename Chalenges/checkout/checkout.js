@@ -2,9 +2,10 @@ function sortByDay(arr) {
   const storage = {};
   for(let i = 0; i < arr.length; i++) {
     const object = arr[i];
-    const purchaseTime = new Date(object.timestamp);
+    const newDay = new Date(object.timestamp);
+
+    const timeString = newDay.toUTCString().replace(',', '').substr(0, 15);
     
-    const timeString = purchaseTime.toDateString();
     
     if(!storage[timeString])  {
       storage[timeString] = object.price;
