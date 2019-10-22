@@ -19,7 +19,7 @@ const dateAdd = (today, diff) => {
   });
   console.log(badArray);
   let newTime = badArray.reduce((a,b) => a + b, 0);
-
+  newTime = newTime * 1000;
  
   const totalTime = newTime + today;
   const newTotalTime = new Date(totalTime);
@@ -34,7 +34,7 @@ const timesMotif = (arr, index, acc) => {
   let newNum = acc * num;
   console.log(acc, arr[index]);
   if(index > 0) newNum = timesMotif(arr, index, newNum);
-  return newNum * 10;
+  return newNum;
 };
 
 module.exports = dateAdd;
