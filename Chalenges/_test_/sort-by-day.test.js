@@ -4,7 +4,7 @@ const sortByDay = require('../checkout/checkout');
 describe('group by day', () => {
   it('put into object', () => {
     const sortedObj = sortByDay(data);
-    console.log(sortedObj);
+   
     expect(sortedObj).toEqual({
       'Thu Jul 18 2019': 18,
       'Wed Jul 03 2019': 31,
