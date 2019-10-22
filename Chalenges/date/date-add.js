@@ -18,14 +18,13 @@ const dateAdd = (today, diff) => {
     newTime = newTime * split[0]; 
     badArray.push(newTime);
   });
-  console.log(badArray);
+  
   let newTime = badArray.reduce((a,b) => a + b, 0);
   newTime = newTime * 1000;
  
   const totalTime = newTime + today;
   const newTotalTime = new Date(totalTime);
 
-  console.log(newTime, today);
   return newTotalTime;
 };
 
@@ -33,7 +32,6 @@ const timesMotif = (arr, index, acc) => {
   index -= 1;
   let num = arr[index];
   let newNum = acc * num;
-  console.log(acc, arr[index]);
   if(index > 0) newNum = timesMotif(arr, index, newNum);
   return newNum;
 };
