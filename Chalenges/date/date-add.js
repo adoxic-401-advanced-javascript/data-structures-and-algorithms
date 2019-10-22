@@ -14,10 +14,11 @@ const dateAdd = (today, diff) => {
   arr.forEach(string => {
     const split = string.split('.');
     const getIndex = modObj[split[split.length-1]];
-    const newTime = timesMotif(arrMultiply, getIndex);
+    const newTime = timesMotif(arrMultiply, getIndex, 0);
     badArray.push(newTime);
   });
-  let newTime = addToSelfMotif(badArray, badArray.length);
+  console.log(badArray);
+  let newTime = badArray.reduce((a,b) => a + b, 0);
 
   let firstTime = today.valueOf();
   const totalTime = newTime + firstTime;
@@ -27,19 +28,12 @@ const dateAdd = (today, diff) => {
   return newTotalTime;
 };
 
-const timesMotif = (arr, index) => {
+const timesMotif = (arr, index, acc) => {
   index -= 1;
   let num = arr[index];
-  console.log(num);
-  if(index > 0) num = timesMotif(arr, index);
-  return num * 1000;
+  acc += num;
+  if(index > 0) num = timesMotif(arr, index-1);
+  return acc * 1000;
 };
 
-const addToSelfMotif = (arr, index) => {
-  index -= 1;
-  let accumulator = 0;
-  if(arr[index]) accumulator += arr[index];
-  if(arr[index]) accumulator = addToSelfMotif(arr, index);
-  return accumulator;
-};
 module.exports = dateAdd;
