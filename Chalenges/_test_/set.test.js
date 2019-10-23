@@ -28,5 +28,13 @@ describe('making a Set Class', () => {
     expect(testSet.set['word']).toBe('word');
   });
 
-  
+  it('should see if a set contains a value', () => {
+    const testSet = new Set();
+    testSet.add(5);
+    testSet.add('word');
+    const actual = testSet.has(5);
+    const word = testSet.has('word');
+    expect(actual).toBeTruthy();
+    expect(word).toBeTruthy();
+  });
 });
