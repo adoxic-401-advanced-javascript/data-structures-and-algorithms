@@ -22,15 +22,32 @@ class Set {
   has(value) {
     const objKeys = Object.keys(this.set);
     const trueOrFalse = { has: false };
-    console.log(value, objKeys);
+    
     for(let i = 0; i < objKeys.length; i++) {
       const comp = objKeys[i];
       if(value == comp) {
         trueOrFalse.has = true;
       }
     }
-    console.log(trueOrFalse);
+    
     return trueOrFalse.has;
+  }
+  intersection(set) {
+    const mySet = this.set;
+    return Set.intersection(set, mySet);
+  }
+  static intersection(setA, setB) {
+    const aKeys = Object.keys(setA);
+    const intersect = {};
+
+    for(let i = 0; i < aKeys.length; i++) {
+      const aKey = aKeys[i];
+     
+      if(setB[aKey]) {
+        intersect[aKey] = aKey;
+      }
+    }
+    return intersect;
   }
 }
 

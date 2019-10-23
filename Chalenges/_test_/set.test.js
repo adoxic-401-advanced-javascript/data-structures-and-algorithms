@@ -37,4 +37,19 @@ describe('making a Set Class', () => {
     expect(actual).toBeTruthy();
     expect(word).toBeTruthy();
   });
+
+  it('should check and return intersection', () => {
+    const testSetA = new Set();
+    testSetA.add(5);
+    testSetA.add('word');
+
+    const testSetB = new Set();
+    testSetB.add(5);
+    testSetB.add('string');
+
+    const resultStatic = Set.intersection(testSetA.set, testSetB.set);
+    const resultInstance = testSetB.intersection(testSetA.set);
+    expect(resultStatic).toEqual({ 5: '5' });
+    expect(resultInstance).toEqual({ 5: '5' });
+  });
 });
