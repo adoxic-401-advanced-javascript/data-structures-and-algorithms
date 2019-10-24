@@ -1,5 +1,6 @@
 //Solution, use node fs to read and rename files.
 //1 put all files in a folder.
+const fs = require('fs').promises;
 
 //2 require fs with async.
 //2.5 setup fs mock in jest
