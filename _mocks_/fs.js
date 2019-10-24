@@ -16,4 +16,11 @@ function __setMockFiles(newMockFiles) {
   }
 }
 
+function readdir(directoryPath) {
+  return mockFiles[directoryPath] || [];
+}
+
+fs.__setMockFiles = __setMockFiles;
+fs.readdirSync = readdir;
+
 module.exports = fs;
