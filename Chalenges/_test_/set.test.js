@@ -49,7 +49,20 @@ describe('making a Set Class', () => {
 
     const resultStatic = Set.intersection(testSetA.set, testSetB.set);
     const resultInstance = testSetB.intersection(testSetA.set);
-    expect(resultStatic).toEqual({ 5: '5' });
-    expect(resultInstance).toEqual({ 5: '5' });
+    expect(resultStatic).toEqual({ 5: 5 });
+    expect(resultInstance).toEqual({ 5: 5 });
+  });
+
+  it('should return the union of two sets', () => {
+    const testSetA = new Set();
+    testSetA.add(5);
+    testSetA.add('word');
+
+    const testSetB = new Set();
+    testSetB.add(5);
+    testSetB.add('string');
+
+    const resultStatic = Set.union(testSetA, testSetB);
+    expect(resultStatic).toEqual({ 5: 5, string: 'string', word: 'word' });
   });
 });

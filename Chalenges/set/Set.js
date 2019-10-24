@@ -37,7 +37,7 @@ class Set {
     return Set.intersection(set, mySet);
   }
   static intersection(setA, setB) {
-    const aKeys = Object.keys(setA);
+    const aKeys = Object.values(setA);
     const intersect = {};
 
     for(let i = 0; i < aKeys.length; i++) {
@@ -48,6 +48,20 @@ class Set {
       }
     }
     return intersect;
+  }
+  static union(setA, setB) {
+    const newSet = new Set();
+    const aKey = Object.values(setA.set);
+    const bKey = Object.values(setB.set);
+
+    aKey.map(key => {
+      newSet.add(key);
+    });
+    bKey.map(key => {
+      newSet.add(key);
+    });
+    console.log(newSet);
+    return newSet.set;
   }
 }
 
