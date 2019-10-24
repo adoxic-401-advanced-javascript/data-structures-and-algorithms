@@ -64,8 +64,12 @@ describe('making a Set Class', () => {
 
     const resultStatic = Set.union(testSetA, testSetB);
     const resultInstance = testSetB.union(testSetA);
-    
+
     expect(resultStatic).toEqual({ 5: 5, string: 'string', word: 'word' });
     expect(resultInstance).toEqual({ 5: 5, string: 'string', word: 'word' });
+  });
+
+  it('should get the difference of two sets', () => {
+    
   });
 });

@@ -20,11 +20,11 @@ class Set {
     }
   }
   has(value) {
-    const objKeys = Object.keys(this.set);
+    const objVals = Object.Vals(this.set);
     const trueOrFalse = { has: false };
     
-    for(let i = 0; i < objKeys.length; i++) {
-      const comp = objKeys[i];
+    for(let i = 0; i < objVals.length; i++) {
+      const comp = objVals[i];
       if(value == comp) {
         trueOrFalse.has = true;
       }
@@ -41,30 +41,43 @@ class Set {
     return Set.union(set, mySet);
   }
   static intersection(setA, setB) {
-    const aKeys = Object.values(setA);
-    const intersect = {};
+    const aVals = Object.values(setA);
+    const newSet = new Set();
 
-    for(let i = 0; i < aKeys.length; i++) {
-      const aKey = aKeys[i];
+    for(let i = 0; i < aVals.length; i++) {
+      const aVal = aVals[i];
      
-      if(setB[aKey]) {
-        intersect[aKey] = aKey;
+      if(setB[aVal]) {
+        newSet.set[aVal] = aVal;
       }
     }
-    return intersect;
+    return newSet.set;
   }
   static union(setA, setB) {
     const newSet = new Set();
-    const aKey = Object.values(setA.set);
-    const bKey = Object.values(setB.set);
+    const aVal = Object.values(setA.set);
+    const bVal = Object.values(setB.set);
 
-    aKey.map(key => {
-      newSet.add(key);
+    aVal.map(Val => {
+      newSet.add(Val);
     });
-    bKey.map(key => {
-      newSet.add(key);
+
+    bVal.map(Val => {
+      newSet.add(Val);
     });
-    console.log(newSet);
+    return newSet.set;
+  }
+  static difference(setA, setB) {
+    const aVals = Object.values(setA);
+    const newSet = new Set();
+
+    for(let i = 0; i < aVals.length; i++) {
+      const aVal = aVals[i];
+     
+      if(!setB[aVal]) {
+        newSet.set[aVal] = aVal;
+      }
+    }
     return newSet.set;
   }
 }
