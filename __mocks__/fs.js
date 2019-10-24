@@ -4,7 +4,8 @@ const fs = jest.genMockFromModule('fs');
 //this is the function from the jest docs on mock function 
 
 let mockFiles = Object.create(null);
-function __setMockFiles(newMockFiles) {
+
+function _setMockFiles(newMockFiles) {
   mockFiles = Object.create(null);
   for (const file in newMockFiles) {
     const dir = path.dirname(file);
@@ -17,10 +18,11 @@ function __setMockFiles(newMockFiles) {
 }
 
 function readdir(directoryPath) {
-  return mockFiles[directoryPath] || [];
+  return Promise.resolve(mockFiles[directoryPath] || []); 
 }
 
-fs.__setMockFiles = __setMockFiles;
-fs.readdirSync = readdir;
+fs._setMockFiles = _setMockFiles;
+fs.promises = {};
+fs.promises.readdir = readdir;
 
 module.exports = fs;
