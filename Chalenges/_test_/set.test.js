@@ -4,7 +4,7 @@ describe('making a Set Class', () => {
 
   it('should make an empty set', () => {
     const testSet = new Set();
-    expect(testSet.size).toBe(0);
+  
     expect(testSet.set).toEqual({});
   });
 
@@ -12,8 +12,8 @@ describe('making a Set Class', () => {
     const testSet = new Set();
     testSet.add(5);
     const repeat = testSet.add(5);
+
     expect(testSet.set[5]).toBe(5);
-    expect(testSet.size).toBe(1);
     expect(repeat).toBe('this is already here try adding something else');
   });
 
@@ -21,8 +21,10 @@ describe('making a Set Class', () => {
     const testSet = new Set();
     testSet.add(5);
     testSet.add('word');
+
     testSet.remove('word');
     const alreadyGone = testSet.remove('word');
+    
     expect(alreadyGone).toBe('this was not here to begin with');
     testSet.add('word');
     expect(testSet.set['word']).toBe('word');
@@ -47,10 +49,10 @@ describe('making a Set Class', () => {
     testSetB.add(5);
     testSetB.add('string');
 
-    const resultStatic = Set.intersection(testSetA.set, testSetB.set);
-    const resultInstance = testSetB.intersection(testSetA.set);
-    expect(resultStatic).toEqual({ 5: 5 });
-    expect(resultInstance).toEqual({ 5: 5 });
+    const resultStatic = Set.intersection(testSetA, testSetB);
+    const resultInstance = testSetB.intersection(testSetA);
+    expect(resultStatic.set).toEqual({ 5: 5 });
+    expect(resultInstance.set).toEqual({ 5: 5 });
   });
 
   it('should return the union of two sets', () => {
@@ -65,11 +67,23 @@ describe('making a Set Class', () => {
     const resultStatic = Set.union(testSetA, testSetB);
     const resultInstance = testSetB.union(testSetA);
 
-    expect(resultStatic).toEqual({ 5: 5, string: 'string', word: 'word' });
-    expect(resultInstance).toEqual({ 5: 5, string: 'string', word: 'word' });
+    expect(resultStatic.set).toEqual({ 5: 5, string: 'string', word: 'word' });
+    expect(resultInstance.set).toEqual({ 5: 5, string: 'string', word: 'word' });
   });
 
   it('should get the difference of two sets', () => {
-    
+    const testSetA = new Set();
+    testSetA.add(5);
+    testSetA.add('word');
+
+    const testSetB = new Set();
+    testSetB.add(5);
+    testSetB.add('string');
+
+    const resultStatic = Set.difference(testSetA, testSetB);
+    const resultInstance = testSetB.difference(testSetA);
+
+    expect(resultStatic.set).toEqual({ string: 'string', word: 'word' });
+    expect(resultInstance.set).toEqual({ string: 'string', word: 'word' });
   });
 });

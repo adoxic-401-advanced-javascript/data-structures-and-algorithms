@@ -1,11 +1,9 @@
 class Set {
   constructor() {
     this.set = {};
-    this.size = 0;
   }
   add(value) {
     if(!this.set[value]) {
-      this.size += 1;
       this.set[value] = value;
     } else {
       return 'this is already here try adding something else';
@@ -13,14 +11,13 @@ class Set {
   }
   remove(value) {
     if(this.set[value]) {
-      this.size -= 1;
       delete this.set[value];
     } else {
       return 'this was not here to begin with';
     }
   }
   has(value) {
-    const objVals = Object.Vals(this.set);
+    const objVals = Object.values(this.set);
     const trueOrFalse = { has: false };
     
     for(let i = 0; i < objVals.length; i++) {
@@ -33,25 +30,29 @@ class Set {
     return trueOrFalse.has;
   }
   intersection(set) {
-    const mySet = this.set;
+    const mySet = this;
     return Set.intersection(set, mySet);
   }
   union(set) {
     const mySet = this;
     return Set.union(set, mySet);
   }
+  difference(set) {
+    const mySet = this;
+    return Set.difference(set, mySet);
+  }
   static intersection(setA, setB) {
-    const aVals = Object.values(setA);
+    const aVals = Object.values(setA.set);
     const newSet = new Set();
 
     for(let i = 0; i < aVals.length; i++) {
       const aVal = aVals[i];
      
-      if(setB[aVal]) {
+      if(setB.set[aVal]) {
         newSet.set[aVal] = aVal;
       }
     }
-    return newSet.set;
+    return newSet;
   }
   static union(setA, setB) {
     const newSet = new Set();
@@ -65,20 +66,29 @@ class Set {
     bVal.map(Val => {
       newSet.add(Val);
     });
-    return newSet.set;
+    return newSet;
   }
   static difference(setA, setB) {
-    const aVals = Object.values(setA);
+    const aVals = Object.values(setA.set);
+    const bVals = Object.values(setB.set);
     const newSet = new Set();
 
     for(let i = 0; i < aVals.length; i++) {
       const aVal = aVals[i];
      
-      if(!setB[aVal]) {
+      if(!setB.set[aVal]) {
         newSet.set[aVal] = aVal;
       }
     }
-    return newSet.set;
+
+    for(let i = 0; i < bVals.length; i++) {
+      const bVal = bVals[i];
+     
+      if(!setA.set[bVal]) {
+        newSet.set[bVal] = bVal;
+      }
+    }
+    return newSet;
   }
 }
 
