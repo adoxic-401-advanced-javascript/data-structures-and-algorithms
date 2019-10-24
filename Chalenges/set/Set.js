@@ -36,6 +36,10 @@ class Set {
     const mySet = this.set;
     return Set.intersection(set, mySet);
   }
+  union(set) {
+    const mySet = this;
+    return Set.union(set, mySet);
+  }
   static intersection(setA, setB) {
     const aKeys = Object.values(setA);
     const intersect = {};

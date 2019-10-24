@@ -63,6 +63,9 @@ describe('making a Set Class', () => {
     testSetB.add('string');
 
     const resultStatic = Set.union(testSetA, testSetB);
+    const resultInstance = testSetB.union(testSetA);
+    
     expect(resultStatic).toEqual({ 5: 5, string: 'string', word: 'word' });
+    expect(resultInstance).toEqual({ 5: 5, string: 'string', word: 'word' });
   });
 });
