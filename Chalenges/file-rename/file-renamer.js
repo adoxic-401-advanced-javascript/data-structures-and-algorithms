@@ -7,24 +7,26 @@ const fs = require('fs').promises;
 
 //3 use readdir to read and save file names into an fileName array.
 //test
-function fileNameGetter(path) {
-  const fileNames = [];
-  return fs.readdir(path, 'utf8')
-    .then(array => {
-      console.log(array);
-      array.map(name => {
-        fileNames.push(name);
-      });
-      return fileNames;
-    });
-  
+async function fileNameGetter(path) {
+  return await fs.readdir(path, 'utf8');
 }
-
+  
 //4 loop through fileName to make the path to readFile.
 //test
+async function fileLooper(path) {
+  const arr = await fileNameGetter(path);
+  const fileContent = [];
+  Promise.all(arr.map(async file => {
+    const content = await fs.readFile(`${path}/${file}`);
+    fileContent.push(content);
+    //5 get the last modified with stat and pull mdate.
+    //test
+ 
+      
+  }));
+  return fileContent;
+}
 
-//5 get the last modified with stat and pull mdate.
-//test
 
 //6 take mdate, current index of fileName, and contents of the of readFile put into a string to creat newName string
 //test
@@ -32,4 +34,4 @@ function fileNameGetter(path) {
 //7 use newName and rename to rename the file.
 //test
 
-module.exports = { fileNameGetter };
+module.exports = { fileNameGetter, fileLooper };

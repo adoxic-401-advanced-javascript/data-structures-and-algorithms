@@ -1,6 +1,6 @@
 const fs = require('fs');
 jest.mock('fs');
-const { fileNameGetter } = require('../file-renamer');
+const { fileNameGetter, fileLooper } = require('../file-renamer');
 
 describe('file renamer', () => {
   const MOCK_FILE_INFO = {
@@ -19,4 +19,12 @@ describe('file renamer', () => {
         expect(files).toEqual(['3.txt', '27.txt']);
       });
   });
+
+  it('should read the file content', () => {
+    return fileLooper('/path/to')
+      .then(contents => {
+        expect(contents).toEqual(['apple', 'pear']);
+      });
+  });
+  
 });
