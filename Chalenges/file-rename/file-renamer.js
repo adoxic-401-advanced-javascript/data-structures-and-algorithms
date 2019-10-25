@@ -19,10 +19,11 @@ async function fileLooper(path) {
   Promise.all(arr.map(async file => {
     const content = await fs.readFile(`${path}/${file}`);
     fileContent.push(content);
+    const stats = content.stats.mtimeMs;
     //5 get the last modified with stat and pull mdate.
     //test
- 
-      
+    
+    console.log(stats);
   }));
   return fileContent;
 }

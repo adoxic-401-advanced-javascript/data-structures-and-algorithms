@@ -23,7 +23,16 @@ describe('file renamer', () => {
   it('should read the file content', () => {
     return fileLooper('/path/to')
       .then(contents => {
-        expect(contents).toEqual(['apple', 'pear']);
+        const actual = contents.map(obj => obj.content);
+        expect(actual).toEqual(['apple', 'pear']);
+      });
+  });
+
+  it('should get the last mod time of file', () => {
+    return fileLooper('/path/to')
+      .then(contents => {
+        const actual = contents.map(obj => obj.stats.mtimesMs);
+        expect(actual).toEqual([1311391211, 1311391211]);
       });
   });
   

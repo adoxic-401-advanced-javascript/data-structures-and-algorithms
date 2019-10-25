@@ -11,7 +11,7 @@ function _setMockFiles(newMockFiles) {
     const dir = path.dirname(file);
     const content = newMockFiles[file];
 
-    mockFiles[file] = content;
+    mockFiles[file] = { content: content, stats: { mtimesMs: 1311391211 } };
 
     if (!mockFiles[dir]) {
       mockFiles[dir] = [];
