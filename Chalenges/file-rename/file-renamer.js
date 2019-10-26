@@ -16,21 +16,25 @@ async function fileNameGetter(path) {
 async function fileLooper(path) {
   const arr = await fileNameGetter(path);
   const fileContent = [];
-  Promise.all(arr.map(async file => {
+  Promise.all(arr.forEach(async file => {
     const content = await fs.readFile(`${path}/${file}`);
-    fileContent.push(content);
-    const stats = content.stats.mtimeMs;
+    const stats = await fs.stats(`${path}/${file}`);
+    const fileString = file.replace('.txt', '');
+    const milli = stats.mtimeMs;
+    const modDate = new Date(milli).toISOString();
     //5 get the last modified with stat and pull mdate.
     //test
-    
-    console.log(stats);
+    //6 take mdate, current index of fileName, and contents of the of readFile put into a string to creat newName string
+    //test
+    const newFileName = `${content}-${fileString}-${modDate}`;
+    fileContent.push(newFileName);
+   
   }));
-  return fileContent;
+
+  return await fileContent;
 }
 
 
-//6 take mdate, current index of fileName, and contents of the of readFile put into a string to creat newName string
-//test
 
 //7 use newName and rename to rename the file.
 //test

@@ -11,7 +11,7 @@ function _setMockFiles(newMockFiles) {
     const dir = path.dirname(file);
     const content = newMockFiles[file];
 
-    mockFiles[file] = { content: content, stats: { mtimesMs: 1311391211 } };
+    mockFiles[file] = { content: content, stats: { mtimeMs: 1311391211 } };
 
     if (!mockFiles[dir]) {
       mockFiles[dir] = [];
@@ -26,12 +26,18 @@ function readdir(directoryPath) {
 
 function readFile(fullFilePath) {
   
-  return Promise.resolve(mockFiles[fullFilePath] || '');
+  return Promise.resolve(mockFiles[fullFilePath].content || '');
+}
+
+function stats(fullFilePath) {
+  
+  return Promise.resolve(mockFiles[fullFilePath].stats || '');
 }
 
 fs._setMockFiles = _setMockFiles;
 fs.promises = {};
 fs.promises.readdir = readdir;
 fs.promises.readFile = readFile;
+fs.promises.stats = stats;
 
 module.exports = fs;

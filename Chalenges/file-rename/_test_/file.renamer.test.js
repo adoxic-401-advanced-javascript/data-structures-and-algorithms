@@ -20,19 +20,11 @@ describe('file renamer', () => {
       });
   });
 
-  it('should read the file content', () => {
+  it('should gets new file name', () => {
     return fileLooper('/path/to')
       .then(contents => {
-        const actual = contents.map(obj => obj.content);
-        expect(actual).toEqual(['apple', 'pear']);
-      });
-  });
-
-  it('should get the last mod time of file', () => {
-    return fileLooper('/path/to')
-      .then(contents => {
-        const actual = contents.map(obj => obj.stats.mtimesMs);
-        expect(actual).toEqual([1311391211, 1311391211]);
+        console.log(contents);
+        expect(contents).toEqual(['apple-3-1970-01-16T04:16:31.211Z', 'pear-27-1970-01-16T04:16:31.211Z']);
       });
   });
   
