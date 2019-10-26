@@ -34,10 +34,16 @@ function stats(fullFilePath) {
   return Promise.resolve(mockFiles[fullFilePath].stats || '');
 }
 
+function rename(fullFilePath, newfilePath) {
+  
+  return Promise.resolve(newfilePath || '');
+}
+
 fs._setMockFiles = _setMockFiles;
 fs.promises = {};
 fs.promises.readdir = readdir;
 fs.promises.readFile = readFile;
 fs.promises.stats = stats;
+fs.promises.rename = rename;
 
 module.exports = fs;

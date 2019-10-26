@@ -27,5 +27,5 @@ describe('file renamer', () => {
         expect(contents).toEqual(['apple-3-1970-01-16T04:16:31.211Z', 'pear-27-1970-01-16T04:16:31.211Z']);
       });
   });
-  
+ 
 });

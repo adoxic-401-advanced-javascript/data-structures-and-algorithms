@@ -28,15 +28,14 @@ async function fileLooper(path) {
     //test
     const newFileName = `${content}-${fileString}-${modDate}`;
     fileContent.push(newFileName);
-   
+    await fs.rename(`${path}/${file}`, `${path}/${content}-${fileString}-${modDate}`);
+    
   }));
-
+  
+  
   return await fileContent;
 }
 
 
-
-//7 use newName and rename to rename the file.
-//test
 
 module.exports = { fileNameGetter, fileLooper };
