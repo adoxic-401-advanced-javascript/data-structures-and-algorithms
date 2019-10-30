@@ -31,3 +31,24 @@
 //        set remaining entries in arr to remaining values in right
 //     else
 //        set remaining entries in arr to remaining values in left
+
+const mergeSort = (arr) => {
+  const n = arr.length;
+  
+  if(n > 1) {
+    const mid = Math.floor(n / 2);
+    const left = arr.splice[0, mid];
+    const right = arr;
+
+    mergeSort(left);
+    mergeSort(right);
+
+    mergeSort(left, right, arr);
+  }
+};
+
+const merge = (left, right, arr) => {
+  let a = 0;
+  let b = 0;
+  let c = 0;
+}
