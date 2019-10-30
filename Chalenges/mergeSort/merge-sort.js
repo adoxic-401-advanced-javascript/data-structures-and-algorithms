@@ -43,12 +43,31 @@ const mergeSort = (arr) => {
     mergeSort(left);
     mergeSort(right);
 
-    mergeSort(left, right, arr);
+    merge(left, right, arr);
   }
+
+  return arr;
 };
 
 const merge = (left, right, arr) => {
-  let a = 0;
-  let b = 0;
-  let c = 0;
-}
+  let i = 0;
+  let j = 0;
+  let k = 0;
+
+  while(i < left.length && j < right.length) {
+    if(left[i] <= right[j]) {
+      arr[k] = left[i];
+      i = i + 1;
+    } else {
+      arr[k] = left[i];
+      j = j + 1;
+    } 
+    k = k + 1;
+  }
+
+  if(i === left.length) {
+    left = right;
+  } else {
+    right = left;
+  }
+};
