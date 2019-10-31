@@ -1,6 +1,6 @@
 const Stack = require('../stackAndQueue/stack');
 
-describe('make a stack', () => {
+describe.skip('make a stack', () => {
 
   it('makes empty stack', () => {
     const newStack = new Stack();

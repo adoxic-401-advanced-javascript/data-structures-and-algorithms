@@ -33,13 +33,14 @@
 //        set remaining entries in arr to remaining values in left
 
 const mergeSort = (arr) => {
+  console.log('start arr', arr);
   const n = arr.length;
   
   if(n > 1) {
     const mid = Math.floor(n / 2);
-    const left = arr.splice[0, mid];
+    const left = arr.splice(0, mid);
     const right = arr;
-
+    console.log(left, right, mid);
     mergeSort(left);
     mergeSort(right);
 
@@ -71,3 +72,5 @@ const merge = (left, right, arr) => {
     right = left;
   }
 };
+
+module.exports = mergeSort;
