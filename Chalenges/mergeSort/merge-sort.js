@@ -58,19 +58,19 @@ const merge = (left, right, arr) => {
 
   while(iLeft < left.length && iRight < right.length) {
     if(left[iLeft] <= right[iRight]) {
-      arr[iArr] = left[iArr];
-      iRight = iRight + 1;
-    } else {
       arr[iArr] = left[iLeft];
       iLeft = iLeft + 1;
+    } else {
+      arr[iArr] = right[iRight];
+      iRight = iRight + 1;
     } 
     iArr = iArr + 1;
   }
 
-  if(iArr === left.length) {
-    right.concat(arr);
+  if(iLeft < left.length) {
+    arr.concat(left);
   } else {
-    left.concat(arr);
+    arr.concat(right);
   }
   console.log('is arr getting stuff', arr);
   return arr;
