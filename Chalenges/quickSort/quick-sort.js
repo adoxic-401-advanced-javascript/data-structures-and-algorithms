@@ -9,7 +9,7 @@
 function quickSort(arr, left, right) {
   if(left < right) {
     let position = partition(arr, left, right);
-
+    console.log(position);
     quickSort(arr, left, position -1);
     quickSort(arr, position +1, right);
   }
@@ -51,3 +51,5 @@ function Swap(arr, i, low) {
 //     temp <-- arr[i]
 //     arr[i] <-- arr[low]
 //     arr[low] <-- temp
+
+module.exports = quickSort;
