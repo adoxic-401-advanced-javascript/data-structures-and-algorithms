@@ -84,3 +84,9 @@ Challenge 15 Insertion Sort
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/20)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/134043551)
 * [brackets](./Challenges/insertionSort/insertion-sort.js)
+
+Challenge 16 Merge Sort
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/21)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/134725825)
+* [brackets](./Challenges/mergeSort/merge-sort.js)
