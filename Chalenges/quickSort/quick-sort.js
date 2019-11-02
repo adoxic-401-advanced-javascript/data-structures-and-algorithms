@@ -7,6 +7,7 @@
 //         // Sort the right
 //         QuickSort(arr, position + 1, right)
 function quickSort(arr, left, right) {
+  console.log(arr);
   if(left < right) {
     let position = partition(arr, left, right);
     console.log(position);
@@ -34,7 +35,7 @@ function partition(arr, left, right) {
       Swap(arr, right, low + 1);
     }
   }
-  return low;
+  return low +1;
 }
 //      // place the value of the pivot location in the middle.
 //      // all numbers smaller than the pivot are on the left, larger on the right. 
