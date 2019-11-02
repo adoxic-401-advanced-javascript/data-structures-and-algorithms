@@ -59,21 +59,24 @@ const merge = (left, right, arr) => {
   while(iLeft < left.length && iRight < right.length) {
     if(left[iLeft] <= right[iRight]) {
       arr[iArr] = left[iLeft];
-      iLeft = iLeft + 1;
+      iLeft++;
     } else {
       arr[iArr] = right[iRight];
-      iRight = iRight + 1;
+      iRight++;
     } 
-    iArr = iArr + 1;
+    iArr++;
   }
 
   if(iLeft < left.length) {
-    arr.concat(left);
-  } else {
-    arr.concat(right);
+    arr[iArr] = left[iLeft];
+    iArr++;
+    iLeft++;
   }
-  console.log('is arr getting stuff', arr);
-  return arr;
+  if(iRight < right.length) {
+    arr[iArr] = right[iRight];
+    iArr++;
+    iRight++;
+  }
 };
 
 module.exports = mergeSort;

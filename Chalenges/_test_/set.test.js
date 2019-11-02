@@ -1,6 +1,6 @@
 const Set = require('../set/Set');
 
-describe.skip('making a Set Class', () => {
+describe('making a Set Class', () => {
 
   it('should make an empty set', () => {
     const testSet = new Set();

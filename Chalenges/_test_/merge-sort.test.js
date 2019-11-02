@@ -6,4 +6,10 @@ describe('Merge sort arr', () => {
     mergeSort(arr);
     expect(arr).toEqual([1, 4, 7, 21, 28, 35, 44, 80]);
   });
+
+  it('should still work if some numbers are the same', () => {
+    const arr = [21, 5, 15, 29, 5, 33, 20, 5];
+    mergeSort(arr);
+    expect(arr).toEqual([5, 5, 5, 15, 20, 21, 29, 33]);
+  });
 });
