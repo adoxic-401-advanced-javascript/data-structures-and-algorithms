@@ -91,8 +91,14 @@ Challenge 16 Merge Sort
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/134725825)
 * [brackets](./Challenges/mergeSort/merge-sort.js)
 
-Challenge 16 Quick Sort
+Challenge 17 Quick Sort
 ### Links and Resources
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/22)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/134725825)
 * [brackets](./Challenges/quickSort/quick-sort.js)
+
+Challenge 18 Hash Table
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/23)
+* [travis](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/23/checks?check_run_id=286820164)
+* [brackets](./Challenges/hashTable/HashTable.js)
