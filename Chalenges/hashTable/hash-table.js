@@ -22,6 +22,7 @@ class HashTable {
     const hash = this.hash(key);
     const bucket = this.buckets[hash];
     let contents = `sorry, I couldn't find that`;
+    if(!bucket) return contents;
     for(let i = 0; i < bucket.length; i += 2) {
       const arrKey = bucket[i];
       if (arrKey === key) {

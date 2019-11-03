@@ -23,6 +23,12 @@ describe('Hash Table', () => {
     expect(hashTable.buckets[12]).toEqual(['paint', 'Holbein']);
   });
 
+  it('should error if the key is not a string', () => {
+    const hashTable = new HashTable();
+    const err = hashTable.hash(true);
+    expect(err).toBe('not a valid key type');
+  });
+
   it('should get using a key', () => {
     const hashTable = new HashTable();
     const paintBrand = { paint: 'Holbein' };
@@ -31,6 +37,13 @@ describe('Hash Table', () => {
     const actual = hashTable.get(key[0]);
 
     expect(actual).toBe('Holbein');
+  });
+
+  it('should error if there is nothing saved at given key', () => {
+    const hashTable = new HashTable();
+    const err = hashTable.get('thing');
+
+    expect(err).toBe(`sorry, I couldn't find that`);
   });
 
   it('should see if a key is being used in the buckets', () => {
