@@ -7,10 +7,10 @@
 //         // Sort the right
 //         QuickSort(arr, position + 1, right)
 function quickSort(arr, left, right) {
-  console.log(arr);
+
   if(left < right) {
     let position = partition(arr, left, right);
-    console.log(position);
+
     quickSort(arr, left, position -1);
     quickSort(arr, position +1, right);
   }

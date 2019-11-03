@@ -8,7 +8,7 @@ describe('make fifo animal model', () => {
     shelter.enqueue('cat', 'snowball');
     shelter.enqueue('dog', 'fido');
     shelter.enqueue('dog', 'ella');
-    console.log(shelter);
+
     const dog = shelter.dequeue('dog');
     const cat = shelter.dequeue('cat');
 

@@ -23,7 +23,7 @@ describe('file renamer', () => {
   it('should gets new file name', () => {
     return fileLooper('/path/to')
       .then(contents => {
-        console.log(contents);
+       
         expect(contents).toEqual(['apple-3-1970-01-16T04:16:31.211Z', 'pear-27-1970-01-16T04:16:31.211Z']);
       });
   });

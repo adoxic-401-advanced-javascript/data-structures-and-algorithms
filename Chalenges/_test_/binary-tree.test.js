@@ -84,7 +84,7 @@ describe.skip('make and traverse a binary tree', () => {
     newTree.add(9);
   
     const values = newTree.breadthFirst();
-    console.log(values);
+ 
     expect(values).toEqual([6, 4, 8, 2, 5, 7, 9]);
   });
 });
