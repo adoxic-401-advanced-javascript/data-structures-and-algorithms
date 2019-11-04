@@ -1,18 +1,18 @@
 const repeatedWord = (longStr) => {
-  const betterStr = longStr.replace(/!|.|,|;|:/, '');
-  const strArr = betterStr.split(' ');
+  const lowStr = longStr.toLowerCase();
+  const strArr = lowStr.split(' ');
+ 
   const storage = {};
-  let key = '';
+
   for(let i = 0; i < strArr.length; i++) {
-    const word = strArr[i];
-    if(!storage.word) {
+    const splitWord = strArr[i];
+    const word = splitWord.replace('/!|.|,|;|:/', '');
+    if(!storage[word]) {
       storage[word] = word;
     } else {
-      key = word;
-      return;
+      return storage[word];
     }
   }
-  return key;
 };
 
 module.exports = repeatedWord;
