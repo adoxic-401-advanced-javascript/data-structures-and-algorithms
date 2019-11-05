@@ -22,6 +22,6 @@ describe('binary tree intersection', () => {
     secondTree.add(13);
 
     const actual = treeIntersect(firstTree, secondTree);
-    expect(actual).toEqual([3, 12]);
+    expect(actual).toEqual([6, 3, 12]);
   });
 });

@@ -1,10 +1,8 @@
 function treeIntersect(tree1, tree2) {
-  let i = 0;
   const save = {};
   const intersectArr = [];
   firstTree(tree1, save);
-  console.log(save);
-  intersect(tree2, intersectArr, save, i);
+  intersect(tree2, intersectArr, save);
   return intersectArr;
 }
 function firstTreeMotif(current, save) {
@@ -17,18 +15,20 @@ function firstTree(tree1, save) {
   const start = tree1.root;
   firstTreeMotif(start, save);
 }
-function intersectMotif(current, intersect, save, i) {
+function intersectMotif(current, intersect, save) {
+  const i = intersect.length;
+
   if(current && save[current.value]) {
     intersect[i] = current.value;
-    i++;
+    
   } 
-  if(current.left) intersect = intersectMotif(current.left, intersect, save, i);
-  if(current.right) intersect = intersectMotif(current.right, intersect, save, i);
-
+  if(current.left) intersect = intersectMotif(current.left, intersect, save);
+  if(current.right) intersect = intersectMotif(current.right, intersect, save);
+  return intersect;
 }
-function intersect(tree2, intersect, save, i) {
+function intersect(tree2, intersect, save) {
   const start = tree2.root;
-  intersectMotif(start, intersect, save, i);
+  intersectMotif(start, intersect, save);
 }
 
 module.exports = treeIntersect;
