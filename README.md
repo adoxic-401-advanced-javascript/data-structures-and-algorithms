@@ -103,8 +103,14 @@ Challenge 18 Hash Table
 * [travis](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/23/checks?check_run_id=286820164)
 * [brackets](./Challenges/hashTable/HashTable.js)
 
-Challenge 18 Repeated Words
+Challenge 19 Repeated Words
 ### Links and Resources
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/24)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/135078695)
 * [brackets](./Challenges/repeatedWord/repeated-word.js)
+
+Challenge 20 Tree Intersection
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/25)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/135107795)
+* [brackets](./Challenges/treeIntersection/tree-intersection.js)
