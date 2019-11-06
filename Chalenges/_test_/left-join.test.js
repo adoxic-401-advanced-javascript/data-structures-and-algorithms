@@ -23,6 +23,13 @@ describe('Left Join', () => {
     hashOne.add('peppy', 'energetic');
     const joinArr = leftJoin(hashOne, hashTwo);
 
-    expect(joinArr[1]).toEqual(['peppy', 'energetic', 'null']);
+    expect(joinArr[1]).toEqual(['peppy', 'energetic', null]);
+  });
+
+  it('should not add things from the second hash that do not exist in the first', () => {
+    hashTwo.add('pouty', 'upbeat');
+    const joinArr = leftJoin(hashOne, hashTwo);
+    
+    expect(joinArr.length).toEqual(4);
   });
 });
