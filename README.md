@@ -114,3 +114,9 @@ Challenge 20 Tree Intersection
 * [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/25)
 * [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/135107795)
 * [brackets](./Challenges/treeIntersection/tree-intersection.js)
+
+Challenge 21 Left Join
+### Links and Resources
+* [submission PR](https://github.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/pull/26)
+* [travis](https://travis-ci.com/adoxic-401-advanced-javascript/data-structures-and-algorithms/builds/135107795)
+* [brackets](./Challenges/leftJoin/left-join.js)
