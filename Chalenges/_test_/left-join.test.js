@@ -11,29 +11,18 @@ describe('Left Join', () => {
   hashOne.add('angry', 'furious');
   hashTwo.add('angry', 'forgiving');
 
-  it('should check state before left join', () => {
-    const happyVal = hashOne.get('happy');
-    const sadVal = hashOne.get('sad');
-    const angryVal = hashOne.get('angry');
-    expect(happyVal).toBe('delighted');
-    expect(sadVal).toBe('grim');
-    expect(angryVal).toBe('furious');
-  });
-
   it('should join without errors', () => {
-    leftJoin(hashOne, hashTwo);
-    const happyVal = hashOne.get('happy');
-    const sadVal = hashOne.get('sad');
-    const angryVal = hashOne.get('angry');
-    expect(happyVal).toBe('delighted sad');
-    expect(sadVal).toBe('grim happy');
-    expect(angryVal).toBe('furious forgiving');
+    const joinArr = leftJoin(hashOne, hashTwo);
+    
+    expect(joinArr[0]).toEqual(['happy', 'delighted', 'sad']);
+    expect(joinArr[1]).toEqual(['sad', 'grim', 'happy']);
+    expect(joinArr[2]).toEqual(['angry', 'furious', 'forgiving']);
   });
 
   it('should add null if there is not value in the second Hash Table', () => {
     hashOne.add('peppy', 'energetic');
-    leftJoin(hashOne, hashTwo);
-    const peppyVal = hashOne.get('peppy');
-    expect(peppyVal).toBe('energetic null');
+    const joinArr = leftJoin(hashOne, hashTwo);
+
+    expect(joinArr[1]).toEqual(['peppy', 'energetic', 'null']);
   });
 });
