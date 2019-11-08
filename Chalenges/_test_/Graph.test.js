@@ -37,5 +37,25 @@ describe('Graph implementation', () => {
 
   });
 
-  
+  it('should get the size of the graph', () => {
+    const graph = new Graph();
+    graph.addNode('App');
+    graph.addNode('DisplayTracks');
+    graph.addNode('AlbumDisplay');
+    const shouldBeSize = graph.getSize();
+    expect(shouldBeSize).toBe(3);
+  });
+
+  it('should return the graph', () => {
+    const graph = new Graph();
+    graph.addNode('App');
+    graph.addNode('DisplayTracks');
+    graph.addNode('AlbumDisplay');
+    graph.addEdge(graph.graph[0], graph.graph[1], 'Artist name, track title');
+    graph.addEdge(graph.graph[0], graph.graph[2], 'Artist id, Artist name');
+    graph.addEdge(graph.graph[2], graph.graph[1], 'Artist name, track title');
+    const shouldBeGraph = graph.getNodes();
+    console.log(shouldBeGraph);
+    expect(shouldBeGraph).toEqual({ 0: { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title', { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title'], value: 'AlbumDisplay' }, 'Artist id, Artist name'], value: 'App' }, 1: { neighbor: [], value: 'DisplayTracks'}, 2: { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title'], value: 'AlbumDisplay' } });
+  });
 });

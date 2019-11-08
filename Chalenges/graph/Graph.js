@@ -21,6 +21,14 @@ class Graph {
     node.neighbor[node.neighbor.length] = node2;
     if(weight) node.neighbor[node.neighbor.length] = weight;
   }
+
+  getNodes() {
+    return this.graph;
+  }
+
+  getSize() {
+    return this.size;
+  }
 }
 
 module.exports = Graph;
