@@ -29,6 +29,10 @@ class Graph {
   getSize() {
     return this.size;
   }
+
+  getNeighbors(node) {
+    return node.neighbor;
+  }
 }
 
 module.exports = Graph;

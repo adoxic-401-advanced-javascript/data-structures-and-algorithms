@@ -58,4 +58,17 @@ describe('Graph implementation', () => {
     console.log(shouldBeGraph);
     expect(shouldBeGraph).toEqual({ 0: { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title', { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title'], value: 'AlbumDisplay' }, 'Artist id, Artist name'], value: 'App' }, 1: { neighbor: [], value: 'DisplayTracks'}, 2: { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title'], value: 'AlbumDisplay' } });
   });
+
+  it('should return the neighbors of a node', () => {
+    const graph = new Graph();
+    graph.addNode('App');
+    graph.addNode('DisplayTracks');
+    graph.addNode('AlbumDisplay');
+    graph.addEdge(graph.graph[0], graph.graph[1], 'Artist name, track title');
+    graph.addEdge(graph.graph[0], graph.graph[2], 'Artist id, Artist name');
+    const shouldBeNeighbors = graph.getNeighbors(graph.graph[0]);
+    console.log(shouldBeNeighbors);
+    expect(shouldBeNeighbors).toEqual([{ neighbor: [], value: 'DisplayTracks' }, 'Artist name, track title', { neighbor: [], value: 'AlbumDisplay' }, 'Artist id, Artist name']);
+  });
+
 });
