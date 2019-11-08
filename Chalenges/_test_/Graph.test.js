@@ -11,8 +11,31 @@ describe('Graph implementation', () => {
     const graph = new Graph();
     graph.addNode('App');
     
-    expect(graph.graph).toEqual({ 0: { value: 'App', edge: [{ edge: null, weight: null }] } });
+    expect(graph.graph).toEqual({ 0: { value: 'App', neighbor: [] } });
     expect(graph.size).toBe(1);
   });
+
+  it('should add one edge', () => {
+    const graph = new Graph();
+    graph.addNode('App');
+    graph.addNode('DisplayTracks');
+    graph.addEdge(graph.graph[0], graph.graph[1], 'Artist name, track title');
+    console.log(graph.graph[0]);
+    expect(graph.graph[0].value).toBe('App');
+    expect(graph.graph[0].neighbor).toEqual([{ neighbor: [], value: 'DisplayTracks' }, 'Artist name, track title']);
+  });
+
+  it('should make a small graph', () => {
+    const graph = new Graph();
+    graph.addNode('App');
+    graph.addNode('DisplayTracks');
+    graph.addNode('AlbumDisplay');
+    graph.addEdge(graph.graph[0], graph.graph[1], 'Artist name, track title');
+    graph.addEdge(graph.graph[0], graph.graph[2], 'Artist id, Artist name');
+    graph.addEdge(graph.graph[2], graph.graph[1], 'Artist name, track title');
+    expect(graph.graph[0].neighbor).toEqual([{ neighbor: [], value: 'DisplayTracks' }, 'Artist name, track title', { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title'], value: 'AlbumDisplay' }, 'Artist id, Artist name']);
+
+  });
+
   
 });

@@ -1,7 +1,7 @@
 class Node {
   constructor(value) {
     this.value = value;
-    this.edge = [{ edge: null, weight: null }];
+    this.neighbor = [];
   }
 }
 
@@ -16,9 +16,10 @@ class Graph {
     this.size += 1;
   }
 
-  addEdge(node, name, weight) {
-    node.edge.edge = this.graph[name];
-    if(weight) node.edge.weight = weight;
+  addEdge(node, node2, weight) {
+
+    node.neighbor[node.neighbor.length] = node2;
+    if(weight) node.neighbor[node.neighbor.length] = weight;
   }
 }
 
