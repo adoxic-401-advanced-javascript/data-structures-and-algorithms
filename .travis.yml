@@ -1,0 +1,13 @@
+before_install:
+  - export TZ=PDT
+  - date
+language: node_js
+node_js:
+  - "stable"
+branches:
+  only:
+    - master
+script:
+  - npm run lint
+  - npm test
+
