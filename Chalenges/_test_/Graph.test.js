@@ -20,7 +20,6 @@ describe('Graph implementation', () => {
     graph.addNode('App');
     graph.addNode('DisplayTracks');
     graph.addEdge(graph.graph[0], graph.graph[1], 'Artist name, track title');
-    console.log(graph.graph[0]);
     expect(graph.graph[0].value).toBe('App');
     expect(graph.graph[0].neighbor).toEqual([{ neighbor: [], value: 'DisplayTracks' }, 'Artist name, track title']);
   });
@@ -55,7 +54,6 @@ describe('Graph implementation', () => {
     graph.addEdge(graph.graph[0], graph.graph[2], 'Artist id, Artist name');
     graph.addEdge(graph.graph[2], graph.graph[1], 'Artist name, track title');
     const shouldBeGraph = graph.getNodes();
-    console.log(shouldBeGraph);
     expect(shouldBeGraph).toEqual({ 0: { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title', { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title'], value: 'AlbumDisplay' }, 'Artist id, Artist name'], value: 'App' }, 1: { neighbor: [], value: 'DisplayTracks'}, 2: { neighbor: [{ neighbor: [], value: 'DisplayTracks'}, 'Artist name, track title'], value: 'AlbumDisplay' } });
   });
 
@@ -67,8 +65,23 @@ describe('Graph implementation', () => {
     graph.addEdge(graph.graph[0], graph.graph[1], 'Artist name, track title');
     graph.addEdge(graph.graph[0], graph.graph[2], 'Artist id, Artist name');
     const shouldBeNeighbors = graph.getNeighbors(graph.graph[0]);
-    console.log(shouldBeNeighbors);
     expect(shouldBeNeighbors).toEqual([{ neighbor: [], value: 'DisplayTracks' }, 'Artist name, track title', { neighbor: [], value: 'AlbumDisplay' }, 'Artist id, Artist name']);
+  });
+
+  it('should return a breadth first array of values', () => {
+    const graph = new Graph();
+    graph.addNode('App');
+    graph.addNode('DisplayTracks');
+    graph.addNode('AlbumDisplay');
+    graph.addNode('Tracks');
+    graph.addNode('Albums');
+    graph.addEdge(graph.graph[0], graph.graph[1], 'Artist name, track title');
+    graph.addEdge(graph.graph[0], graph.graph[2], 'Artist id, Artist name');
+    graph.addEdge(graph.graph[1], graph.graph[3], 'stuff');
+    graph.addEdge(graph.graph[2], graph.graph[4], 'stuff');
+    const breadth = graph.breadthFirst();
+
+    expect(breadth).toEqual(['App', 'DisplayTracks', 'AlbumDisplay', 'Tracks', 'Albums']);
   });
 
 });

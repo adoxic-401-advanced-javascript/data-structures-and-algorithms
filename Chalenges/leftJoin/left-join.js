@@ -4,7 +4,6 @@ const leftJoin = (hashMap1, hashMap2) => {
     const bucket = hashMap1.buckets[i];
     if(bucket !== undefined) {
       const newContent = [];
-      console.log('how??', bucket);
       if(hashMap2.contains(bucket[0])) {
         const firstContent = bucket[1];
         const secondContent = hashMap2.get(bucket[0]);

@@ -33,6 +33,32 @@ class Graph {
   getNeighbors(node) {
     return node.neighbor;
   }
+
+  breadthFirst() {
+    const queue = [];
+    let base = this.graph[0];
+    queue.push(base);
+    const breadthArr = [];
+
+    while(queue.length !== 0) {
+      for(let i = 0; i < queue.length; i++) {
+        const current = queue.shift();
+        if(current.value !== null) {
+          breadthArr.push(current.value);
+          console.log(breadthArr);
+        }
+
+        while(current.neighbor.length !== 0) {
+          console.log('is getting to next while');
+          const neighborEl = current.neighbor.shift();
+          current.neighbor.shift();
+          if(neighborEl) queue.push(neighborEl);
+        }
+      }
+      
+    }
+    return breadthArr;
+  }
 }
 
 module.exports = Graph;
